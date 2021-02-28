@@ -1,0 +1,42 @@
+loadstring(game:HttpGet('https://pastebin.com/raw/cwDSpepQ', true))()
+local cc = game:GetService("Workspace").CurrentCamera
+local nig2 = 5
+local autoAim = false
+local trigger = false
+local lol = library:AddWindow("Arsenal")
+local firstTab = lol:AddTab("Settings")
+local l = firstTab:AddSwitch('Trigger bot', function(a)
+    trigger = a
+end)
+local lo = firstTab:AddSwitch('Auto aim at player', function(a)
+    autoAim = a
+end)
+--lo:Set(true)
+local lo2 = firstTab:AddSlider('Distance from player', function(a)
+    nig2 = tonumber(a)
+end, {
+    ["min"] = 0,
+    ["max"] = 20,
+})
+lo2:Set(10)
+while wait() do
+    for i,v in pairs(game.Players:GetPlayers()) do
+        if v ~= game.Players.LocalPlayer and v.TeamColor ~= game.Players.LocalPlayer.TeamColor and v.Character and v.Character:FindFirstChild("Head") and v.Character:FindFirstChild("Spawned") then
+            repeat
+                if autoAim then
+                    cc.CFrame = CFrame.new(cc.CFrame.p, v.Character.Head.CFrame.p)
+                end
+                if trigger then
+                    spawn(function()
+                        mouse1press()
+                        wait(0.1)
+                        mouse1release()
+                    end)
+                end
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,nig2)
+                game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+            wait()
+            until not v.Character or not v.Character:FindFirstChild("Spawned") or v.TeamColor == game.Players.LocalPlayer.TeamColor
+        end
+    end
+end
