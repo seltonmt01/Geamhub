@@ -1,0 +1,128 @@
+-- Farewell Infortality.
+-- Version: 2.82
+-- Instances:
+local Arsenal = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local God = Instance.new("TextButton")
+local Aimbot = Instance.new("TextButton")
+local Esp = Instance.new("TextButton")
+local Exit = Instance.new("TextButton")
+local Open = Instance.new("TextButton")
+local AimbotHow = Instance.new("Frame")
+local HowTo = Instance.new("TextLabel")
+local ExitAim = Instance.new("TextButton")
+--Properties:
+Arsenal.Name = "Arsenal"
+Arsenal.Parent = game.CoreGui
+Arsenal.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = Arsenal
+Main.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+Main.Position = UDim2.new(0.0934085324, 0, 0.388415694, 0)
+Main.Size = UDim2.new(0, 265, 0, 249)
+Main.Visible = false
+
+God.Name = "God"
+God.Parent = Main
+God.BackgroundColor3 = Color3.new(0.392157, 0.392157, 0.392157)
+God.Position = UDim2.new(0.120754719, 0, 0.127079755, 0)
+God.Size = UDim2.new(0, 200, 0, 50)
+God.Font = Enum.Font.SourceSans
+God.Text = "God"
+God.TextColor3 = Color3.new(0, 0, 0)
+God.TextSize = 24
+God.MouseButton1Click:connect(function()
+game.Players.LocalPlayer.Character.Damage:Destroy()
+end) 
+
+Aimbot.Name = "Aimbot"
+Aimbot.Parent = Main
+Aimbot.BackgroundColor3 = Color3.new(0.392157, 0.392157, 0.392157)
+Aimbot.Position = UDim2.new(0.120754719, 0, 0.398532897, 0)
+Aimbot.Size = UDim2.new(0, 200, 0, 50)
+Aimbot.Font = Enum.Font.SourceSans
+Aimbot.Text = "Aimbot"
+Aimbot.TextColor3 = Color3.new(0, 0, 0)
+Aimbot.TextSize = 24
+Aimbot.MouseButton1Click:connect(function()
+loadstring(game:HttpGet'https://pastebin.com/raw/1Hhnwpup')()
+AimbotHow.Visible = true
+end)
+
+Esp.Name = "Esp"
+Esp.Parent = Main
+Esp.BackgroundColor3 = Color3.new(0.392157, 0.392157, 0.392157)
+Esp.Position = UDim2.new(0.120754719, 0, 0.684206247, 0)
+Esp.Size = UDim2.new(0, 200, 0, 50)
+Esp.Font = Enum.Font.SourceSans
+Esp.Text = "Esp"
+Esp.TextColor3 = Color3.new(0, 0, 0)
+Esp.TextSize = 24
+Esp.MouseButton1Click:connect(function()
+spawn(loadstring(game:HttpGet("https://pastebin.com/raw/zKjj0TQD", true)))()
+end)
+
+Exit.Name = "Exit"
+Exit.Parent = Main
+Exit.BackgroundColor3 = Color3.new(1, 1, 1)
+Exit.BackgroundTransparency = 1
+Exit.Position = UDim2.new(0.875471711, 0, 0, 0)
+Exit.Size = UDim2.new(0, 33, 0, 25)
+Exit.Font = Enum.Font.SourceSans
+Exit.Text = "X"
+Exit.TextColor3 = Color3.new(1, 0.286275, 0.0470588)
+Exit.TextSize = 24
+Exit.MouseButton1Click:connect(function()
+Main.Visible = false
+Open.Visible = true
+end)
+
+Open.Name = "Open"
+Open.Parent = Arsenal
+Open.BackgroundColor3 = Color3.new(0.156863, 0.156863, 0.156863)
+Open.Position = UDim2.new(0, 0, 0.478705287, 0)
+Open.Size = UDim2.new(0, 124, 0, 37)
+Open.Font = Enum.Font.SourceSans
+Open.Text = "Open Gui"
+Open.TextColor3 = Color3.new(1, 1, 1)
+Open.TextSize = 24
+Open.MouseButton1Click:connect(function()
+Main.Visible = true
+Open.Visible = false
+end)
+
+AimbotHow.Name = "AimbotHow"
+AimbotHow.Parent = Arsenal
+AimbotHow.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+AimbotHow.Position = UDim2.new(0.327038318, 0, 0.386743456, 0)
+AimbotHow.Size = UDim2.new(0, 144, 0, 181)
+AimbotHow.Visible = false
+
+HowTo.Name = "HowTo"
+HowTo.Parent = AimbotHow
+HowTo.BackgroundColor3 = Color3.new(1, 1, 1)
+HowTo.BackgroundTransparency = 1
+HowTo.Position = UDim2.new(0.0902777761, 0, 0.0883977935, 0)
+HowTo.Size = UDim2.new(0, 117, 0, 82)
+HowTo.Font = Enum.Font.SourceSans
+HowTo.Text = "Press H to activate and hold Rmb to lock onto player"
+HowTo.TextColor3 = Color3.new(0.992157, 0.992157, 0.992157)
+HowTo.TextSize = 20
+HowTo.TextWrapped = true
+HowTo.TextXAlignment = Enum.TextXAlignment.Left
+HowTo.TextYAlignment = Enum.TextYAlignment.Top
+
+ExitAim.Name = "Exit Aim"
+ExitAim.Parent = AimbotHow
+ExitAim.BackgroundColor3 = Color3.new(1, 1, 1)
+ExitAim.BackgroundTransparency = 1
+ExitAim.Position = UDim2.new(0.847222209, 0, 0, 0)
+ExitAim.Size = UDim2.new(0, 22, 0, 26)
+ExitAim.Font = Enum.Font.SourceSans
+ExitAim.Text = "X"
+ExitAim.TextColor3 = Color3.new(1, 0, 0)
+ExitAim.TextSize = 24
+ExitAim.MouseButton1Click:connect(function()
+AimbotHow.Visible = false
+end)
