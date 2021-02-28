@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://gist.github.com/DeveloperMikey/ee1267c73209ff0cc77349e49115fc05/raw/islands.lua", true))()
